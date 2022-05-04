@@ -1,0 +1,82 @@
+#message {
+  @include sectionDefault;
+  h1 {
+    @include titles;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 440px;
+    margin-inline: auto;
+    gap: 15px;
+    padding-bottom: 30px;
+    div {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      gap: 10px;
+      label {
+        margin: 0 0 0 6px;
+        color: $cQuaternaria;
+      }
+      label,
+      input,
+      textarea {
+        font-family: $affogato;
+        resize: none;
+      }
+      input,
+      textarea {
+        border: none;
+        box-shadow: 0 0 0 1px $cSecundaria;
+        border-radius: 4px;
+        padding: 15px;
+        height: 40px;
+        color: $cQuinaria;
+        font-size: 1.125rem;
+      }
+      textarea {
+        height: 100px;
+      }
+    }
+    button {
+      @include btnSend;
+      align-self: flex-end;
+    }
+  }
+  .feedback {
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 37px;
+    li {
+      @include coments;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      position: relative;
+      margin-left: 10px;
+      &::before {
+        position: absolute;
+        content: "";
+        left: -20px;
+        width: 5px;
+        height: 100%;
+        background: $sBefore1;
+      }
+      &:nth-child(even)::before{
+        background: $sBefore2;
+      }
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  #message {
+    form{
+      width: 100%;
+    }
+  }
+}
