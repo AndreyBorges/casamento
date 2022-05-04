@@ -65,4 +65,94 @@
       }
     }
   }
+  .menuHamb {
+    display: none;
+  }
 }
+
+@media (max-width: 680px) {
+  .headerContainer {
+    justify-content: space-between;
+    &.active {
+      position: relative;
+      nav {
+        position: static;
+        display: flex;
+        .listHeader {
+          animation: right 0.3s ease-in-out;
+          width: 180px;
+          height: 200px;
+          background: #39393983;
+          position: absolute;
+          flex-direction: column;
+          right: 10px;
+
+          li {
+            a {
+              color: $white;
+              &::before{
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+    nav {
+      display: none;
+    }
+    .menuHamb {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      padding: 10px;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      z-index: 22;
+      &.active {
+        .hamb {
+          transform: translateX(-25px);
+          opacity: 0;
+        }
+        &::before {
+          transform: rotate(-45deg);
+          top: 19px;
+        }
+        &::after {
+          transform: rotate(45deg);
+          top: 19px;
+        }
+      }
+      .hamb {
+        position: absolute;
+        content: "";
+        width: 25px;
+        height: 2px;
+        background: $cPrimaria;
+        transition: all 0.3s ease;
+        border-radius: 12px;
+      }
+      &:after,
+      &:before {
+        position: absolute;
+        width: 25px;
+        height: 2px;
+        content: "";
+        background: $cPrimaria;
+        transition: all 0.3s ease;
+        border-radius: 12px;
+      }
+      &:before {
+        top: 24px;
+      }
+      &:after {
+        top: 14px;
+      }
+    }
+  }
+}
+
+

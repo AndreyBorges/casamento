@@ -52,15 +52,16 @@
 }
 
 @media (max-width: 425px) {
-  #history { 
+  #history {
     .history {
       .photos {
         height: 300px;
       }
     }
     .history-3 {
-      
       picture {
+        align-items: center;
+        justify-content: center;
         flex-direction: column;
         gap: 20px;
       }

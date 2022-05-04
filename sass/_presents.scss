@@ -87,5 +87,22 @@
       justify-content: center;
       gap: 10px;
     }
+    .options{
+      flex-direction: column;
+      gap: 40px;
+      button{
+        align-self: flex-end;
+      }
+    }
+  }
+}
+
+@media (max-width: 320px){
+  #presents {
+    .options{
+      span{
+        font-size: 0.938rem !important;
+      }
+    }
   }
 }

@@ -1,6 +1,5 @@
 const initPresentItens = () => {
   const listItens = document.querySelector(".itens");
-
   function makeGiftElements({ url, description, price }) {
     const element = document.createElement("li");
     const img = document.createElement("img");
@@ -152,7 +151,6 @@ const initPresentItens = () => {
     listItens.appendChild(li);
     
   });
-  console.log(arr.length)
 };
 
 export default initPresentItens;

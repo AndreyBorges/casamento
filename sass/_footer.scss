@@ -1,0 +1,12 @@
+footer{
+  @include footer;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-between;
+  .logoVallori{
+    width: 100px;
+    height: 50px;
+  }
+
+}
