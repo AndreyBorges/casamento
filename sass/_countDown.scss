@@ -1,0 +1,71 @@
+.containerCountdown {
+  @include sectionDefault;
+  h1 {
+    @include titles;
+  }
+  .countdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+
+    padding-top: 20px;
+    & > div {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: $cPrimaria;
+      font-family: $affogato;
+      font-size: 28px;
+      position: relative;
+      gap: 20px;
+      width: 75px;
+      &:nth-child(1) {
+        &::after {
+          content: "dias";
+          font-size: 14px;
+        }
+      }
+      &:nth-child(2) {
+        &::after {
+          content: "horas";
+          font-size: 14px;
+        }
+      }
+      &:nth-child(3) {
+        &::after {
+          content: "minutos";
+          font-size: 14px;
+        }
+      }
+      &:nth-child(4) {
+        &::after {
+          content: "segundos";
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  .containerCountdown {
+    .countdown {
+      gap: 20px;
+    }
+  }
+}
+@media (max-width: 320px) {
+  .containerCountdown {
+    .countdown {
+      gap: 0px;
+      &>div{
+        font-size: 24px;
+        &::after{
+          font-size: 12px !important; ;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+#pair {
+  @include sectionDefault;
+  #he {
+    h1 {
+      @include titles;
+    }
+    h2,
+    p {
+      @include history;
+      padding: 0 0 20px;
+    }
+    h2 {
+      text-align: center;
+    }
+  }
+  #she {
+    h1 {
+      @include titles;
+    }
+    h2,
+    p {
+      @include history;
+      padding: 0 0 20px;
+    }
+    h2 {
+      text-align: center;
+    }
+  }
+}

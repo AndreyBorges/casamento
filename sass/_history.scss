@@ -1,0 +1,85 @@
+#history {
+  @include sectionDefault;
+  .history {
+    h1 {
+      @include titles;
+    }
+    h2,
+    p {
+      @include history;
+      padding: 0 0 20px;
+    }
+    h2 {
+      text-align: center;
+    }
+    .photos {
+      display: flex;
+      gap: 20px;
+      overflow: hidden;
+      padding-inline: 15px;
+      height: 520px;
+    }
+  }
+  .history-2 {
+    h1 {
+      @include titles;
+    }
+    h2,
+    p {
+      @include history;
+      padding: 0 0 20px;
+    }
+    h2 {
+      text-align: center;
+    }
+  }
+  .history-3 {
+    h1 {
+      @include titles;
+    }
+    picture {
+      display: flex;
+      justify-content: space-between;
+      img {
+        width: 235px;
+        transition: transform 0.3s ease-in-out;
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  #history { 
+    .history {
+      .photos {
+        height: 300px;
+      }
+    }
+    .history-3 {
+      
+      picture {
+        flex-direction: column;
+        gap: 20px;
+      }
+    }
+  }
+}
+@media (max-width: 320px) {
+  #history {
+    .history {
+      .photos {
+        height: 200px;
+      }
+    }
+    .history-3 {
+      picture {
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

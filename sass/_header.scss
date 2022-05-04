@@ -1,0 +1,68 @@
+.headerContainer {
+  @include sectionHeader;
+  .logo {
+    @include logo;
+  }
+  nav {
+    display: flex;
+    .listHeader {
+      @include contListHeader;
+      li {
+        a {
+          @include header;
+          position: relative;
+          display: flex;
+          &::before {
+            content: "";
+            bottom: 12px;
+            left: 20px;
+            height: 1px;
+            width: 0;
+            position: absolute;
+            background: $cSecundaria;
+            transition: all 0.3s ease;
+          }
+        }
+        &:nth-child(1) {
+          &:hover {
+            a {
+              &::before {
+                width: 60px;
+              }
+            }
+          }
+        }
+        &:nth-child(2) {
+          &:hover {
+            a {
+              &::before {
+                height: 1px;
+                width: 50px;
+              }
+            }
+          }
+        }
+        &:nth-child(3) {
+          &:hover {
+            a {
+              &::before {
+                height: 1px;
+                width: 72px;
+              }
+            }
+          }
+        }
+        &:nth-child(4) {
+          &:hover {
+            a {
+              &::before {
+                height: 1px;
+                width: 60px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

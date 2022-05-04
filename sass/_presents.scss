@@ -1,0 +1,91 @@
+#presents {
+  @include sectionDefault;
+  h1 {
+    @include titles;
+  }
+  .options {
+    display: flex;
+    justify-content: space-between;
+    button {
+      padding: 12px 22px;
+      font-size: 1.125rem;
+      border-radius: 4px;
+      font-family: $affogato;
+      background: $cBtnPrimario;
+      color: $white;
+      border: none;
+      position: relative;
+      display: flex;
+      gap: 5px;
+      &:disabled {
+        opacity: 0.5;
+      }
+    }
+    .order {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      span,label,input {
+        font-size: 1.2rem;
+        color: $cSecundaria;
+        font-family: $affogato;
+      }
+      
+      input {
+        margin-inline: 12px 5px;
+        line-height: 1rem;
+      }
+    }
+  }
+  .itens {
+    margin-top: 36px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding-inline: 15px;
+    li {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      width: 206px;
+      height: 440px;
+
+      img {
+        position: relative;
+        border: 1px solid white;
+        border-radius: 50%;
+      }
+
+      h2,
+      p {
+        font-family: $affogato;
+        font-size: 1rem;
+        color: $cQuaternaria;
+        font-weight: normal;
+      }
+      span {
+        font-family: $affogato;
+        font-size: 2rem;
+        line-height: 2.813rem;
+        color: $cQuaternaria;
+        font-weight: bold;
+      }
+
+      button {
+        margin-bottom: 20px;
+        @include btnPresent;
+      }
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  #presents {
+    .itens {
+      grid-template-columns: auto;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+  }
+}
