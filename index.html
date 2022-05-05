@@ -13,10 +13,11 @@
     <link rel="stylesheet" href="./css/style.css" />
     <title>Igor Lobo e Karina Louredo</title>
   </head>
+
   <body>
     <header class="headerContainer" aria-label="Menu do Site">
       <span class="logo"> Casamento Igor Lobo e Karina Louredo </span>
-      <nav>
+      <nav data-scroll="slow">
         <ul class="listHeader">
           <li><a href="#history">HISTÓRIA </a></li>
           <li><a href="#pair">NOIVOS </a></li>
@@ -170,6 +171,21 @@
         </div>
         <ul class="itens">
         </ul>
+        <ul class="listaCompras">
+          <h2>Meu Carrinho</h2>
+          <div><span>Descrição do presente</span> <span>Valor</span></div>
+          <li>
+            <img src="https://cdn-assets-legacy.casar.com/thumb/240x240x1/dados/sitenoivos/wed419795/presentes/DQU4d_1624814964.png" alt="Air Fryer">
+            <p class="description">Air Fryer</p>
+            <button>Remover</button>
+            <span class="valorItem">R$ 395,38</span>
+          </li>
+          <p>Total <span class="valorTot">R$395,38</span></p>
+          <div>
+            <button>Adicionar mais itens</button>
+            <button>Continuar Compra</button>
+          </div>
+        </ul>
       </article>
     </section>
     <section id="message">
@@ -205,6 +221,6 @@
       </div>
       <p>Vallori Solutions © Direitos Reservados</p>
     </footer>
-    <script type="module" src="./module/index.js"></script>
+    <script type="module" defer src="./module/index.js"></script>
   </body>
 </html>
