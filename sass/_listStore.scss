@@ -1,5 +1,137 @@
-.listaCompras{
-  display: flex;
+.listaCompras {
+  display: none;
   flex-direction: column;
-  gap: 20px;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 20px;
+  h2 {
+    font-family: $affogato;
+    font-weight: 500;
+    margin: 20px 0 10px;
+    color: #333;
+    font-size: 1.433rem;
+  }
+  .subtitle {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px;
+    font-family: $affogato;
+    font-size: 0.938rem;
+    font-weight: 500;
+    border-bottom: 1px solid #ccc;
+  }
+  li {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    padding: 10px 15px;
+    border-bottom: 1px solid #ccc;
+
+    & > div {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 10px;
+      p {
+        font-size: 1.25rem;
+        font-family: $affogato;
+        color: #333;
+      }
+      button {
+        align-self: flex-start;
+        font-family: $affogato;
+        border: none;
+        background: none;
+        color: #ff2b2b;
+        text-decoration: underline;
+        font-size: 0.797rem;
+        cursor: pointer;
+      }
+    }
+    img {
+      width: 100px;
+      height: 100px;
+    }
+    span {
+      align-self: center;
+      font-family: $affogato;
+      color: #333;
+      font-size: 0.938rem;
+    }
+  }
+  & > p {
+    align-self: flex-end;
+    padding: 20px 15px;
+    display: flex;
+    gap: 15px;
+    font-family: $affogato;
+    font-weight: 500;
+    span {
+      font-family: $affogato;
+      font-weight: 400;
+    }
+  }
+  .btnItensList {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    button {
+      &:nth-child(1) {
+        @include btnPresent2;
+        &:hover {
+          background: $cBtnPrimarioHv;
+        }
+      }
+      &:nth-child(2) {
+        @include btnPresent2;
+        background: $cBtnSecundario;
+        &:hover {
+          background: $cBtnSecundarioHv;
+        }
+      }
+    }
+  }
+  .nItens {
+    display: none;
+  }
+
+  &.void {
+    .subtitle {
+      display: none;
+    }
+
+    li {
+      display: none;
+    }
+
+    & > p {
+      display: none;
+    }
+
+    .nItens {
+      align-self: center;
+      font-size: 1.25rem;
+      color: #333;
+      font-weight: 400;
+      padding: 70px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      p,
+      button {
+        font-family: $affogato;
+      }
+      button {
+        @include btnPresent2;
+        &:hover {
+          background: $cBtnPrimarioHv;
+        }
+      }
+    }
+    .btnItensList {
+      button {
+        display: none;
+      }
+    }
+  }
 }

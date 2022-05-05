@@ -12,7 +12,6 @@ const initSlowScroll = () => {
       behavior: "smooth",
       block: "start",
     });
-    console.log(target, target);
   };
 
   evts.forEach((ev) => {

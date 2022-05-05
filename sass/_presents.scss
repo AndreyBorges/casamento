@@ -6,7 +6,6 @@
   .options {
     display: flex;
     justify-content: space-between;
-    display: none;
     button {
       padding: 12px 22px;
       font-size: 1.125rem;
@@ -45,7 +44,6 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     padding-inline: 15px;
-    display: none;
     li {
       display: flex;
       flex-direction: column;
