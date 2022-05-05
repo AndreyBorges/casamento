@@ -14,7 +14,6 @@ const initImportMessage = () => {
       li.appendChild(p)
       h2.innerHTML = e.mConvidado
       p.innerHTML = e.menssagem
-
     })
   }
   importMessage()

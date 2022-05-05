@@ -1,7 +1,7 @@
 const initMenuMobile = () => {
   const headerContainer = document.querySelector(".headerContainer");
   const menuHamb = document.querySelector(".menuHamb");
-  const evs = ["click", "touchstart"];
+  const evs = ["click", "touchstart",'mousedown'];
   const handleMenuHamb = (e) => {
     menuHamb.classList.toggle("active");
     headerContainer.classList.toggle("active");
