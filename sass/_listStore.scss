@@ -1,9 +1,10 @@
-.listaCompras {
+.containerListaCompras {
   display: none;
   flex-direction: column;
   border: 1px solid #ccc;
   padding: 20px;
   border-radius: 20px;
+
   h2 {
     font-family: $affogato;
     font-weight: 500;
@@ -20,44 +21,7 @@
     font-weight: 500;
     border-bottom: 1px solid #ccc;
   }
-  li {
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    padding: 10px 15px;
-    border-bottom: 1px solid #ccc;
 
-    & > div {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 10px;
-      p {
-        font-size: 1.25rem;
-        font-family: $affogato;
-        color: #333;
-      }
-      button {
-        align-self: flex-start;
-        font-family: $affogato;
-        border: none;
-        background: none;
-        color: #ff2b2b;
-        text-decoration: underline;
-        font-size: 0.797rem;
-        cursor: pointer;
-      }
-    }
-    img {
-      width: 100px;
-      height: 100px;
-    }
-    span {
-      align-self: center;
-      font-family: $affogato;
-      color: #333;
-      font-size: 0.938rem;
-    }
-  }
   & > p {
     align-self: flex-end;
     padding: 20px 15px;
@@ -70,6 +34,7 @@
       font-weight: 400;
     }
   }
+
   .btnItensList {
     display: flex;
     justify-content: center;
@@ -90,10 +55,50 @@
       }
     }
   }
-  .nItens {
-    display: none;
-  }
+  .listaCompras {
+    li {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      padding: 10px 15px;
+      border-bottom: 1px solid #ccc;
+      gap: 5px;
 
+      & > div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+        p {
+          font-size: 1.25rem;
+          font-family: $affogato;
+          color: #333;
+        }
+        button {
+          align-self: flex-start;
+          font-family: $affogato;
+          border: none;
+          background: none;
+          color: #ff2b2b;
+          text-decoration: underline;
+          font-size: 0.797rem;
+          cursor: pointer;
+        }
+      }
+      img {
+        width: 100px;
+        height: 100px;
+      }
+      span {
+        align-self: center;
+        font-family: $affogato;
+        color: #333;
+        font-size: 0.938rem;
+      }
+    }
+    .nItens {
+      display: none;
+    }
+  }
   &.void {
     .subtitle {
       display: none;

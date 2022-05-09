@@ -1,14 +1,8 @@
-import initPresentItens from './presentsItens.js'
-import initMenuMobile from './menuMobile.js'
-import initRegressiveCount from './rCount.js'
-import initSlowScroll from './slowScroll.js'
-import initSendMessage from './sendMessage.js'
-import initImportMessage from './importMessage.js'
-
-
-initPresentItens()
-initMenuMobile()
-initRegressiveCount()
-initSlowScroll()
-initSendMessage()
-initImportMessage()
+export { default as initPresentItens } from "./presentsItens.js";
+export { default as initPutCartItens } from "./putCartItens.js";
+export { default as initItensInsideCart } from "./itensInsideCart.js";
+export { default as initMenuMobile } from "./menuMobile.js";
+export { default as initRegressiveCount } from "./rCount.js";
+export { default as initSlowScroll } from "./slowScroll.js";
+export { default as initSendMessage } from "./sendMessage.js";
+export { default as initImportMessage } from "./importMessage.js";
