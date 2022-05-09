@@ -1,7 +1,7 @@
 const initImportMessage = () => {
   const importMessage = () => {
-    const dataLocal = Object.values(localStorage);
-    const storageData = JSON.parse(dataLocal[0]);
+    const localUsers = localStorage.getItem("users");
+    const storageData = JSON.parse(localUsers ? localUsers : "[]");
     const feedback = document.querySelector(".feedback");
 
     storageData.forEach((e) => {

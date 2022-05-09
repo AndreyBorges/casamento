@@ -1,6 +1,6 @@
 import orderBy from "./orderList.js";
-import makeGiftElements from "./formatData.js";
 import arr from "./dado.js";
+import { helpers } from "./index.js";
 
 const initPresentItens = () => {
   const listItens = document.querySelector(".itens");
@@ -29,7 +29,7 @@ const initPresentItens = () => {
 
   const render = (arr) => {
     arr.map((item) => {
-      const li = makeGiftElements(item);
+      const li = helpers.formatData(item);
       listItens.appendChild(li);
     });
   };

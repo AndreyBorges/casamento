@@ -1,7 +1,6 @@
 import {
   initPresentItens,
-  initPutCartItens,
-  initItensInsideCart,
+  initItensCart,
   initMenuMobile,
   initRegressiveCount,
   initSlowScroll,
@@ -10,8 +9,7 @@ import {
 } from "./index.js";
 
 initPresentItens();
-initPutCartItens();
-initItensInsideCart();
+initItensCart()
 initMenuMobile();
 initRegressiveCount();
 initSlowScroll();

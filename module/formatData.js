@@ -1,4 +1,4 @@
-function makeGiftElements({ url, description, price }) {
+function makeGiftElements({ url, description, price, id }) {
   const element = document.createElement("li");
   const img = document.createElement("img");
   const h2 = document.createElement("h2");
@@ -7,6 +7,7 @@ function makeGiftElements({ url, description, price }) {
   const button = document.createElement("button");
   const priceFomated = String(price).split(".");
 
+  element.setAttribute("data-id", id);
   img.setAttribute("src", url);
   h2.innerText = description;
   span.innerText = priceFomated[0];
