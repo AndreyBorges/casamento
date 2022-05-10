@@ -19,7 +19,6 @@ const initPresentItens = () => {
     const ordered = orderBy(arr, value);
 
     listItens.innerHTML = "";
-
     render(ordered);
   };
 
@@ -33,7 +32,8 @@ const initPresentItens = () => {
       listItens.appendChild(li);
     });
   };
-
+ 
   render(arr);
+
 };
 export default initPresentItens;

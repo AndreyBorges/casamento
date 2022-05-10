@@ -1,0 +1,36 @@
+.returnStart {
+  position: fixed;
+  bottom: -2%;
+  right: 5%;
+  width: 55px;
+  height: 55px;
+  opacity: 0;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  z-index: 99;
+  background-color: rgba(138, 138, 138, 0.6);
+  transform: rotate(-90deg);
+  display: none;
+
+  svg {
+    cursor: pointer;
+    fill: $white;
+  }
+
+  &.active {
+    display: flex;
+    animation: returnStart 0.3s forwards;
+  }
+}
+
+@keyframes returnStart {
+  0% {
+    bottom: -2%;
+    opacity: 0;
+  }
+  100% {
+    bottom: 2%;
+    opacity: 1;
+  }
+}

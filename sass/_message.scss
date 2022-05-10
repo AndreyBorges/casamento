@@ -58,11 +58,14 @@
       gap: 10px;
       position: relative;
       margin-left: 10px;
+      h2{
+        font-weight: 500;
+      }
       &::before {
         position: absolute;
         content: "";
         left: -20px;
-        width: 5px;
+        width: 7px;
         height: 100%;
         background: $sBefore1;
       }
