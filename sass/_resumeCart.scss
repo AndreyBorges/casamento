@@ -71,6 +71,13 @@
         color: #868686;
         font-family: $affogato;
       }
+      .errMsg{
+        display: none;
+        color: red;
+        font-size: 14px;
+        margin-top: 5px;
+
+      }
       textarea,
       input {
         width: 100%;
@@ -83,6 +90,10 @@
         &::placeholder {
           font-family: $affogato;
         }
+      }
+      input.invalid {
+        box-shadow: 0 0 0 1px red;
+        animation: invalid .3s forwards;
       }
       &:last-child {
         label {
@@ -202,5 +213,26 @@
         @include btnBuy;
       }
     }
+  }
+}
+
+@keyframes invalid{
+  0%{
+    transform: translateX(10px);
+  }
+  20%{
+    transform: translateX(-10px);
+  }
+  40%{
+    transform: translateX(10px);
+  }
+  60%{
+    transform: translateX(-10px);
+  }
+  80%{
+    transform: translateX(10px);
+  }
+  100%{
+    transform: translateX(0);
   }
 }

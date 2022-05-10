@@ -7,7 +7,10 @@ import {
   initSendMessage,
   initImportMessage,
   initReturnStart,
-  Slide
+  Slide,
+  initModal,
+  initBuyModal,
+  initModalForm,
 } from "./index.js";
 
 initPresentItens();
@@ -17,13 +20,15 @@ initRegressiveCount();
 initSlowScroll();
 initSendMessage();
 initImportMessage();
-initReturnStart()
+initReturnStart();
+initModal();
+initBuyModal();
+initModalForm();
 
 const slide = new Slide(".slide", ".slide-wrapper");
 const nextSlide = new Slide(".slideCart", ".cartWrapper");
 slide.init();
 slide.addArrow(".prev", ".next");
-slide.addControlEvents(".custom-control") 
+slide.addControlEvents(".custom-control");
 nextSlide.init();
 nextSlide.addArrow(".cPrev", ".cNext");
-

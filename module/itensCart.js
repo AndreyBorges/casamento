@@ -19,9 +19,17 @@ const initItensCart = () => {
   // * Variaveis da section de resumo de compras
   const resume = document.getElementById("resume");
   const valorTotPresent = document.querySelector(".valorTotPresent span");
+  const cardValue = document.querySelector(".cardValue");
   const allValorTot = document.querySelector(".allValorTot span");
   const returnCart = document.querySelector(".returnCart");
-  const buyFinished = document.querySelector(".buyFinished");
+  const removePresentCard = document.querySelector(".removePresentCard");
+
+  // * Variaveis da section de modal 1
+  const modalContainer = document.querySelector(".conainerModal1");
+  const reject = document.querySelector(".reject");
+
+  // * Variaveis da section de modal 3
+  const spanValorTot = document.querySelector(".spanValorTot");
   // * Variaveis da section carrinho vazio
   const btnReturnItens = document.querySelector(".nItens button");
 
@@ -49,25 +57,35 @@ const initItensCart = () => {
     containerListaCompras.style.display = "none";
     resume.style.display = "grid";
     valorTotPresent.innerHTML = `R$ ${total}`;
-    allValorTot.innerHTML = `R$ ${total + 14.90}`;
-  }
+    allValorTot.innerHTML = `R$ ${total + 14.9}`;
+    spanValorTot.innerHTML = `R$ ${total}`;
+  };
+
+  const handleResumeNoCart = () => {
+    containerListaCompras.style.display = "none";
+    resume.style.display = "grid";
+    cardValue.style.display = "none";
+    valorTotPresent.innerHTML = `R$ ${total}`;
+    allValorTot.innerHTML = `R$ ${total}`;
+    modalContainer.classList.toggle("active");
+    removePresentCard.style.display = "none";
+  };
+
   const handleReturnCart = () => {
     containerListaCompras.style.display = "grid";
     resume.style.display = "none";
-  }
-  
-  
-  
+  };
+
   cartItens.forEach((giftItem) => {
     const btn = giftItem.querySelector("button");
-    
+
     const changeSection = () => {
       itens.style.display = "none";
       options.style.display = "none";
       containerListaCompras.style.display = "block";
       listaCompras.style.display = "grid";
     };
-    
+
     const handleCartItens = () => {
       const dataId = giftItem.getAttribute("data-id");
       const findItem = princArr.find((item) => item.id === +dataId);
@@ -124,16 +142,16 @@ const initItensCart = () => {
       containerListaCompras.style.display = "none";
       options.style.display = "flex";
       itens.style.display = "grid";
-      containerListaCompras.classList.remove("void")
-    }
+      containerListaCompras.classList.remove("void");
+    };
 
     btnReturnItens.onclick = handleReturnItens;
     btn.onclick = handleCartItens;
   });
-
   returnCart.onclick = handleReturnCart;
   btnItensList[0].addEventListener("click", handleMoreItens);
   btnItensList[1].addEventListener("click", handleResumeItens);
+  reject.onclick = handleResumeNoCart;
 };
 
 export default initItensCart;

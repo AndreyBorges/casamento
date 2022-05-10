@@ -232,7 +232,7 @@
         <h2>Resumo da sua compra</h2>
         <div class="prices">
           <p class="valorTotPresent">Valor Total dos Presentes: <span>R$  2034,23</span></p>
-          <p class="valorTotPresent">Valor do Cartão Postal: <span>R$ 14,90</span></p>
+          <p class="cardValue">Valor do Cartão Postal: <span>R$ 14,90</span></p>
           <p class="allValorTot">Total: <span>R$ 2049,13</span></p>
         </div>
         <form>
@@ -240,6 +240,7 @@
           <div>
             <label for="namePresent">Insira seu nome</label>
             <input type="text" id="namePresent" name="namePresent" required>
+            <span class="errMsg"></span>
           </div>
           <div>
             <label for="mensagePersonalized">Personalize a sua mensagem</label>
@@ -277,6 +278,83 @@
       </article>
       </article>
     </section>
+    <article class="conainerModal1">
+      <div class="modal">
+        <div class="closed"><svg xmlns="http://www.w3.org/2000/svg" height="40" width="40"><path d="M10.583 30.833 9.208 29.417 18.583 20 9.208 10.583 10.583 9.167 20 18.583 29.417 9.167 30.792 10.583 21.417 20 30.792 29.417 29.417 30.833 20 21.417Z"/></svg></div>
+        <h1>Poxa, que pena :(</h1>
+        <p>Enviar um cartão impresso é uma forma de eternizar o momento e encantar os noivos!</p>
+        <p>Torne essa experiência completa!</p>
+        <button class="accept">ok! quero encantar com um cartão de presente</button>
+        <button class="reject">Não quero enviar cartão</button>
+      </div>
+    </article>
+    <article class="conainerModal2">
+      <div class="modal">
+        <div class="close"><svg xmlns="http://www.w3.org/2000/svg" height="40" width="40"><path d="M10.583 30.833 9.208 29.417 18.583 20 9.208 10.583 10.583 9.167 20 18.583 29.417 9.167 30.792 10.583 21.417 20 30.792 29.417 29.417 30.833 20 21.417Z"/></svg></div>
+        <h1>Selecione como deseja pagar</h1>
+        <div class="payment">
+          <img src="https://www.igorekarina.com.br/img/layout/logo-pix.png" alt="Pix">
+          <div>
+            <h3>Pague com pix</h3>
+            <p>Pagamento à vista. Aprovação imediata.</p>
+          </div>
+        </div>
+        <div class="payment">
+          <img src="https://www.igorekarina.com.br/img/layout/cartao-credito.png" alt="Cartão credito">
+          <div>
+            <h3>Cartões de Crédito</h3>
+            <p>Pagamento em até 6x <span>(parcela mínima R$5,00)</span></p>
+          </div>
+        </div>
+        <div class="payment">
+          <img src="https://www.igorekarina.com.br/img/layout/boleto.png" alt="Boleto">
+          <div>
+            <h3>Boleto Bancario</h3>
+            <p>Pagamentos via boleto possuem um prazo de <span>02 (dois) dias úteis</span>  para serem confirmados pelo banco.</p>
+          </div>
+        </div>
+        <div class="payment">
+          <img src="https://www.igorekarina.com.br/img/layout/paypal.png" alt="PayPal">
+          <div>
+            <h3>Pague com PayPal</h3>
+            <p>Pagamento em até 6x <span>(parcela mínima R$5,00)</span></p>
+          </div>
+        </div>
+      </div>
+    </article>
+    <article class="conainerModal3">
+      <div class="modalForm">
+        <div class="exit">
+          <svg xmlns="http://www.w3.org/2000/svg" height="40" width="40">
+            <path d="M10.583 30.833 9.208 29.417 18.583 20 9.208 10.583 10.583 9.167 20 18.583 29.417 9.167 30.792 10.583 21.417 20 30.792 29.417 29.417 30.833 20 21.417Z"/>
+          </svg>
+        </div>
+        <h1>Insira os seus dados para emissão do QR Code para pagamento</h1>
+        <p>Os campos marcados com asterisco (*) são de preenchimento obrigatório.</p>
+        <div>
+          <label for="">Nome completo*</label>
+          <input type="text">
+        </div>
+        <div>
+          <label for="">E-mail*</label>
+          <span>(você receberá o QR Code e a confirmação de pagamento recebido neste e-mail)</span>
+          <input type="text">
+        </div>
+        <div>
+          <label for="">CPF*</label>
+          <input type="text">
+        </div>
+        <div>
+          <label for="">Telefone* <span>(Ex.: 11 9 12345678)</span></label>
+          <input type="text">
+        </div>
+        <p>Valor: <span class="spanValorTot"></span></p>
+        <div class="btnsModal">
+          <button>Voltar</button>
+          <button disabled>Avançar</button>
+        </div>
+      </div>
+    </article>
     <section id="message">
       <h1>Deixe seu recado ♡</h1>
       <form action="">

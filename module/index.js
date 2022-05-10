@@ -2,6 +2,7 @@ import { default as formatData } from "./formatData.js";
 import { default as formatItems } from "./formatItems.js";
 import { default as debounce } from "./debounce.js";
 
+
 const helpers = {
   formatData,
   formatItems,
@@ -17,5 +18,8 @@ export { default as initSlowScroll } from "./slowScroll.js";
 export { default as initSendMessage } from "./sendMessage.js";
 export { default as initImportMessage } from "./importMessage.js";
 export { default as initReturnStart } from "./returnStart.js";
+export { default as initModal } from "./modalRemoveCard.js";
+export { default as initBuyModal } from "./modalBuy.js";
+export { default as initModalForm } from "./modalForm.js";
 export { default as Slide } from "./slide.js";
 export { helpers };

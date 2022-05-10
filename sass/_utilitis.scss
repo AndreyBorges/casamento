@@ -156,6 +156,14 @@ $marckScript: "Marck Script", sans-serif;
   &:hover {
     background: $cBtnSecundarioHv;
   }
+  &:disabled{
+    opacity: .5;
+    &:hover{
+      cursor: not-allowed;
+      background: $cBtnSecundario;
+
+    }
+  }
 }
 
 @mixin btnSend {
@@ -247,5 +255,16 @@ $marckScript: "Marck Script", sans-serif;
   100% {
     bottom: 2%;
     opacity: 1;
+  }
+}
+
+@keyframes modal {
+  from{
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0);
   }
 }
