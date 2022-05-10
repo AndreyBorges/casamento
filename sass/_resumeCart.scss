@@ -1,0 +1,206 @@
+#resume {
+  display: none;
+  grid-template-columns: 1fr 300px;
+  box-shadow: 0 0 0 1px #ccc;
+  border-radius: 20px;
+
+  padding: 30px 20px;
+  position: relative;
+  & > div {
+    grid-column: 1/-1;
+  }
+  .prices {
+    grid-row: 2;
+    grid-column: 1;
+    display: flex;
+    flex-direction: column;
+    margin-right: 30px;
+    gap: 5px;
+    p {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 20px;
+      color: #333333;
+      font-family: $affogato;
+      & > span {
+        opacity: 0.8;
+        font-size: 18px;
+      }
+    }
+    .allValorTot {
+      color: #e2799b;
+      & > span {
+        opacity: 0.8;
+        font-size: 18px;
+        color: #e2799b;
+        font-weight: bold;
+      }
+    }
+  }
+  & > h2 {
+    color: #333333;
+    font-family: $affogato;
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 30px;
+  }
+  form {
+    grid-column: 2;
+    grid-row: 2;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+    gap: 20px;
+    h2 {
+      font-size: 20px;
+      font-weight: 400;
+      color: #333333;
+      font-family: $affogato;
+    }
+    & > div {
+      display: flex;
+      flex-direction: column;
+      label {
+        display: block;
+        font-size: 18px;
+        color: #333333;
+        font-family: $affogato;
+      }
+      span {
+        color: #868686;
+        font-family: $affogato;
+      }
+      textarea,
+      input {
+        width: 100%;
+        resize: none;
+        border: none;
+        padding: 10px;
+        border-radius: 4px;
+        box-shadow: 0 0 0 1px #555555;
+        margin-top: 10px;
+        &::placeholder {
+          font-family: $affogato;
+        }
+      }
+      &:last-child {
+        label {
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+
+  & > p {
+    grid-column: 1/-1;
+    grid-row: 3;
+    text-align: center;
+    font-family: $affogato;
+    color: #333333;
+    font-size: 16px;
+  }
+  .cartWrapper {
+    overflow: hidden;
+    display: flex;
+    gap: 20px;
+    overflow: hidden;
+    padding-inline: 15px;
+    height: 250px;
+    width: 600px;
+    margin-inline: auto;
+    .slideCart {
+      display: flex;
+      & li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        width: 80vw;
+        max-width: 250px;
+        border-radius: 4px;
+        overflow: hidden;
+        opacity: 0.875;
+        transform: scale(0.875);
+        transition: 0.4s;
+        position: relative;
+        & img {
+          justify-self: center;
+        }
+        &.active {
+          opacity: 1;
+          transform: scale(1);
+          & img {
+            border: 4px solid #e2799b;
+            box-shadow: 3px 1px 10px #e2799b;
+          }
+        }
+        &::after {
+          position: absolute;
+          content: "R$14,90";
+          padding: 5px;
+          font-size: 18px;
+          font-family: $affogato;
+          background: #e2799b;
+          color: white;
+          top: 39px;
+          box-shadow: -1px 1px black;
+          right: 0;
+          opacity: 0.9;
+        }
+      }
+      &:hover {
+        will-change: transform;
+      }
+    }
+  }
+
+  .arrowCartNav {
+    position: absolute;
+    bottom: 23%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    button {
+      border: none;
+      background: none;
+      cursor: pointer;
+      svg {
+        fill: $cPrimaria;
+      }
+    }
+    .cPrev {
+      transform: rotate(180deg);
+    }
+  }
+
+  & > button {
+    grid-column: 1/-1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0;
+    background: none;
+    text-decoration: underline;
+    cursor: pointer;
+    color: #333333;
+    &:hover {
+      color: #a5a5a5;
+    }
+    margin-bottom: 30px;
+  }
+  .btnFinishedCart {
+    grid-column: 1/-1;
+    justify-self: center;
+    button {
+      &:nth-child(1){
+        @include btnPresent2;
+      }
+      &:nth-child(2){
+        @include btnBuy;
+      }
+    }
+  }
+}

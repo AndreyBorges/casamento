@@ -17,22 +17,29 @@
       position: relative;
       display: flex;
       gap: 5px;
-      
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+      &:hover {
+        background: $cBtnPrimarioHv;
+      }
+
       &:disabled {
-        opacity: 0.5;
+        opacity: 0.3;
       }
     }
     .order {
       display: flex;
       align-items: center;
       justify-content: center;
-      
-      span,label,input {
+
+      span,
+      label,
+      input {
         font-size: 1.2rem;
         color: $cSecundaria;
         font-family: $affogato;
       }
-      
+
       input {
         margin-inline: 12px 5px;
         line-height: 1rem;
@@ -89,20 +96,20 @@
       justify-content: center;
       gap: 10px;
     }
-    .options{
+    .options {
       flex-direction: column;
       gap: 40px;
-      button{
+      button {
         align-self: flex-end;
       }
     }
   }
 }
 
-@media (max-width: 320px){
+@media (max-width: 320px) {
   #presents {
-    .options{
-      span{
+    .options {
+      span {
         font-size: 0.938rem !important;
       }
     }

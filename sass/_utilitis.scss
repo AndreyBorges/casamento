@@ -145,17 +145,17 @@ $marckScript: "Marck Script", sans-serif;
   color: $white;
   background: $cBtnPrimario;
   cursor: pointer;
+  &:hover {
+    background: $cBtnPrimarioHv;
+  }
 }
 
 @mixin btnBuy {
-  font-size: 1.125rem;
-  line-height: 1.429rem;
-  font-family: $affogato;
-  color: $white;
-  width: 138px;
-  height: 36px;
-  padding: 30px 6px;
-  cursor: pointer;
+  @include btnPresent2;
+  background: $cBtnSecundario;
+  &:hover {
+    background: $cBtnSecundarioHv;
+  }
 }
 
 @mixin btnSend {
@@ -235,6 +235,17 @@ $marckScript: "Marck Script", sans-serif;
   }
   100% {
     transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes returnStart {
+  0% {
+    bottom: -2%;
+    opacity: 0;
+  }
+  100% {
+    bottom: 2%;
     opacity: 1;
   }
 }

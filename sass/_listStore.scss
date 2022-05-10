@@ -34,6 +34,18 @@
       font-weight: 400;
     }
   }
+  & > span {
+    display: none;
+    padding: 20px;
+    font-family: $affogato;
+    color: #c09853;
+    font-size: 15px;
+    background: #fcf8e3;
+    color: c09853;
+    border-radius: 4px;
+    line-height: 21.4286px;
+    margin-bottom: 20px;
+  }
 
   .btnItensList {
     display: flex;
@@ -42,16 +54,9 @@
     button {
       &:nth-child(1) {
         @include btnPresent2;
-        &:hover {
-          background: $cBtnPrimarioHv;
-        }
       }
       &:nth-child(2) {
-        @include btnPresent2;
-        background: $cBtnSecundario;
-        &:hover {
-          background: $cBtnSecundarioHv;
-        }
+        @include btnBuy;
       }
     }
   }
@@ -99,8 +104,12 @@
       display: none;
     }
   }
+
   &.void {
     .subtitle {
+      display: none;
+    }
+    .listaCompras{
       display: none;
     }
 
@@ -109,6 +118,9 @@
     }
 
     & > p {
+      display: none;
+    }
+    .btnItensList{
       display: none;
     }
 

@@ -2,51 +2,78 @@ import { helpers } from "./index.js";
 import princArr from "./dado.js";
 
 const initItensCart = () => {
+  // * Variaveis da section de lista de presentes
   const cartItens = document.querySelectorAll(".itens li");
-
   const itens = document.querySelector(".itens");
   const options = document.querySelector(".options");
+  const btnOptions = options.querySelector("button");
 
+  // * Variaveis da section de compras
   const containerListaCompras = document.querySelector(
     ".containerListaCompras"
   );
   const listaCompras = document.querySelector(".listaCompras");
-  const arrTot = [];
-  let total = 0;
   const btnItensList = document.querySelectorAll(".btnItensList button");
   const valorTot = document.querySelector(".valorTot");
-  const btnOptions = options.querySelector("button");
+
+  // * Variaveis da section de resumo de compras
+  const resume = document.getElementById("resume");
+  const valorTotPresent = document.querySelector(".valorTotPresent span");
+  const allValorTot = document.querySelector(".allValorTot span");
+  const returnCart = document.querySelector(".returnCart");
+  const buyFinished = document.querySelector(".buyFinished");
+  // * Variaveis da section carrinho vazio
+  const btnReturnItens = document.querySelector(".nItens button");
+
+  // * Variaveis para retorno de valores
+  const arrTot = [];
+  let total = 0;
 
   const handleMoreItens = () => {
     if (arrTot.length >= 3) {
       const span = document.querySelector(".containerListaCompras > span");
+      span.style.display = "block";
       span.innerHTML = "Você pode escolher até três presentes por compra.";
       return;
+    } else {
+      const span = document.querySelector(".containerListaCompras > span");
+      span.style.display = "none";
     }
 
     containerListaCompras.style.display = "none";
     options.style.display = "flex";
     itens.style.display = "grid";
   };
-  btnItensList[0].addEventListener("click", handleMoreItens);
 
+  const handleResumeItens = () => {
+    containerListaCompras.style.display = "none";
+    resume.style.display = "grid";
+    valorTotPresent.innerHTML = `R$ ${total}`;
+    allValorTot.innerHTML = `R$ ${total + 14.90}`;
+  }
+  const handleReturnCart = () => {
+    containerListaCompras.style.display = "grid";
+    resume.style.display = "none";
+  }
+  
+  
+  
   cartItens.forEach((giftItem) => {
     const btn = giftItem.querySelector("button");
-
+    
     const changeSection = () => {
       itens.style.display = "none";
       options.style.display = "none";
       containerListaCompras.style.display = "block";
       listaCompras.style.display = "grid";
     };
-
+    
     const handleCartItens = () => {
       const dataId = giftItem.getAttribute("data-id");
       const findItem = princArr.find((item) => item.id === +dataId);
 
       const itemAllReadyExist = arrTot.find((item) => item.id === findItem.id);
       if (itemAllReadyExist) return;
-      if (listaCompras.length >= 3) return;
 
       const formatedItem = helpers.formatItems(findItem);
       arrTot.push(findItem);
@@ -63,7 +90,7 @@ const initItensCart = () => {
       btnOptions.disabled = arrTot.length ? false : true;
       btnOptions.innerHTML = `Ver carrinho (${arrTot.length} presentes)`;
 
-      btnOptions.addEventListener("click", (e) => {
+      btnOptions.addEventListener("click", () => {
         changeSection();
       });
 
@@ -75,6 +102,10 @@ const initItensCart = () => {
           const newArr = arrTot.filter(
             (arrItem) => arrItem.id !== +item.getAttribute("data-id")
           );
+          newArr.length === 0
+            ? containerListaCompras.classList.add("void")
+            : null;
+
           arrTot.splice(0, arrTot.length, ...newArr);
           btnOptions.innerHTML = arrTot.length
             ? `Ver carrinho (${arrTot.length} presentes)`
@@ -89,9 +120,20 @@ const initItensCart = () => {
         });
       });
     };
+    const handleReturnItens = () => {
+      containerListaCompras.style.display = "none";
+      options.style.display = "flex";
+      itens.style.display = "grid";
+      containerListaCompras.classList.remove("void")
+    }
 
+    btnReturnItens.onclick = handleReturnItens;
     btn.onclick = handleCartItens;
   });
+
+  returnCart.onclick = handleReturnCart;
+  btnItensList[0].addEventListener("click", handleMoreItens);
+  btnItensList[1].addEventListener("click", handleResumeItens);
 };
 
 export default initItensCart;
