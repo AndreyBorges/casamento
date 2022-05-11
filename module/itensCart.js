@@ -57,8 +57,10 @@ const initItensCart = () => {
     containerListaCompras.style.display = "none";
     resume.style.display = "grid";
     valorTotPresent.innerHTML = `R$ ${total}`;
-    allValorTot.innerHTML = `R$ ${total + 14.9}`;
+    const tot = total + 14.9;
+    allValorTot.innerHTML = `R$ ${tot.toFixed(2)}`;
     spanValorTot.innerHTML = `R$ ${total}`;
+    console.log(tot)
   };
 
   const handleResumeNoCart = () => {
@@ -72,7 +74,7 @@ const initItensCart = () => {
   };
 
   const handleReturnCart = () => {
-    containerListaCompras.style.display = "grid";
+    containerListaCompras.style.display = "flex";
     resume.style.display = "none";
   };
 
@@ -82,7 +84,7 @@ const initItensCart = () => {
     const changeSection = () => {
       itens.style.display = "none";
       options.style.display = "none";
-      containerListaCompras.style.display = "block";
+      containerListaCompras.style.display = "flex";
       listaCompras.style.display = "grid";
     };
 

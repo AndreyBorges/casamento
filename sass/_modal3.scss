@@ -1,6 +1,5 @@
 .conainerModal3 {
   position: fixed;
-  // display: flex;
   display: none;
   justify-content: center;
   align-items: center;
@@ -98,18 +97,18 @@
         margin-top: 10px;
       }
     }
-    .btnsModal{
+    .btnsModal {
       margin-top: 30px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      button{
+      button {
         background: none;
         border: none;
         cursor: pointer;
         color: #868686;
         font-size: 16px;
-        &:nth-child(2){
+        &:nth-child(2) {
           @include btnBuy;
         }
       }
@@ -120,11 +119,90 @@
     display: flex;
   }
 }
-// @media (max-width: 425px) {
-//   font-size: 1.9rem;
-//   text-align: center;
-// }
-// @media (max-width: 320px) {
-//   font-size: 1.8rem;
-//   text-align: center;
-// }
+@media (max-width: 425px) {
+  .conainerModal3 {
+    .modalForm {
+      width: 400px !important;
+      height: 610px !important;
+      h1 {
+        font-size: 18px;
+        margin: 20px 0px 10px;
+      }
+      & > p {
+        &:nth-of-type(1) {
+          font-size: 14px;
+        }
+        &:nth-of-type(2) {
+          font-size: 20px;
+          span {
+            font-size: 22px;
+          }
+        }
+      }
+      & > div {
+        label {
+          font-size: 18px;
+        }
+        input {
+          margin-top: 5px;
+        }
+        span {
+          font-size: 12px !important;
+          color: $cPrimaria !important;
+        }
+      }
+      .btnsModal {
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  .conainerModal3 {
+    align-items: flex-start;
+    justify-content: flex-start;
+    .modalForm {
+      .exit {
+        top: 5px;
+        right: 5px;
+      }
+      width: 300px !important;
+      height: 565px !important;
+      margin: 100px 10px;
+      h1 {
+        font-size: 14px;
+        margin: 20px 0px 10px;
+      }
+      & > p {
+        &:nth-of-type(1) {
+          font-size: 10px;
+        }
+        &:nth-of-type(2) {
+          font-size: 14px;
+          span {
+            font-size: 16px;
+          }
+        }
+      }
+      & > div {
+        label {
+          font-size: 14px;
+        }
+        input {
+          margin-top: 5px;
+        }
+        span {
+          font-size: 10px !important;
+          color: $cPrimaria !important;
+        }
+      }
+      .btnsModal {
+        margin-top: 0;
+        button {
+          font-size: 14px !important;
+        }
+      }
+    }
+  }
+}

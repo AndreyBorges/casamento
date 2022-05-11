@@ -237,6 +237,9 @@
       li{
         align-self: flex-start;
         justify-self: flex-start;
+        &::after{
+          top: 0px !important;
+        }
       }
     }
     .btnFinishedCart{
