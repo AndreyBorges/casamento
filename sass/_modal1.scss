@@ -20,14 +20,14 @@
     border-radius: 20px;
     text-align: center;
     position: relative;
-    animation: modal .3s ease-in-out;
+    animation: modal 0.3s ease-in-out;
     .closed {
       position: absolute;
       top: 15px;
       right: 15px;
       cursor: pointer;
-      svg{
-        fill:$cPrimaria;
+      svg {
+        fill: $cPrimaria;
       }
     }
     h1 {
@@ -68,7 +68,29 @@
     }
   }
 
-  &.active{
+  &.active {
     display: flex;
+  }
+}
+@media (max-width: 425px) {
+  .modal {
+    width: 400px !important;
+  }
+}
+@media (max-width: 320px) {
+  .conainerModal1 {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    .modal {
+      margin-left: 10px;
+      width: 300px !important;
+      h1{
+        font-size: 24px;
+      }
+      p{
+        font-size: 10px;
+      }
+    }
   }
 }

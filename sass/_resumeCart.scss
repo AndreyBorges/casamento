@@ -3,7 +3,6 @@
   grid-template-columns: 1fr 300px;
   box-shadow: 0 0 0 1px #ccc;
   border-radius: 20px;
-
   padding: 30px 20px;
   position: relative;
   & > div {
@@ -71,12 +70,11 @@
         color: #868686;
         font-family: $affogato;
       }
-      .errMsg{
+      .errMsg {
         display: none;
         color: red;
         font-size: 14px;
         margin-top: 5px;
-
       }
       textarea,
       input {
@@ -93,7 +91,7 @@
       }
       input.invalid {
         box-shadow: 0 0 0 1px red;
-        animation: invalid .3s forwards;
+        animation: invalid 0.3s forwards;
       }
       &:last-child {
         label {
@@ -206,33 +204,124 @@
     grid-column: 1/-1;
     justify-self: center;
     button {
-      &:nth-child(1){
+      &:nth-child(1) {
         @include btnPresent2;
       }
-      &:nth-child(2){
+      &:nth-child(2) {
         @include btnBuy;
       }
     }
   }
 }
 
-@keyframes invalid{
-  0%{
-    transform: translateX(10px);
+@media (max-width: 425px) {
+  #resume {
+    
+    grid-template-columns: 380px;
+    gap: 40px;
+    .prices{
+      grid-row: 1 ;
+      p{
+        max-width: 320px;
+      }
+    }
+    p{
+      font-size: 14px;
+      width: 40ch;
+      text-align: left;
+    }
+    .cartWrapper{
+      align-items: center;
+      justify-content: flex-start;
+      width: 300px;
+      li{
+        align-self: flex-start;
+        justify-self: flex-start;
+      }
+    }
+    .btnFinishedCart{
+      display: flex;
+      gap: 20px;
+      button{
+        padding: 10px !important;
+        font-size: 14px !important;
+        width: 80%;
+      }
+    }
+    form {
+      justify-self: center;
+      width: 300px ;
+      grid-column: 1;
+      grid-row: 2;
+      input,textarea{
+        width: 80%;
+      }
+    }
   }
-  20%{
-    transform: translateX(-10px);
-  }
-  40%{
-    transform: translateX(10px);
-  }
-  60%{
-    transform: translateX(-10px);
-  }
-  80%{
-    transform: translateX(10px);
-  }
-  100%{
-    transform: translateX(0);
+}
+@media (max-width: 320px) {
+  #resume {
+    
+    grid-template-columns: 380px;
+    gap: 20px;
+    .prices{
+      grid-row: 2 ;
+      width: 290px !important;
+      p{
+        width: 230px !important;
+      }
+    }
+
+    h2{
+      grid-row: 1;
+      grid-column: 1;
+      font-size: 16px !important;
+    }
+    p{
+      font-size: 12px !important;
+      width: 30ch;
+      text-align: left;
+      grid-row: 4;
+      display: none;
+      span{
+        font-size: 12px !important
+      }
+    }
+    .cartWrapper{
+      display: none;
+    }
+    .btnFinishedCart{
+      display: flex;
+      align-self: flex-start;
+      justify-self: flex-start;
+      justify-content:flex-start;
+      gap: 20px;
+      button{
+        padding: 8px !important;
+        font-size: 10px !important;
+        width: 80%;
+      }
+    }
+    .arrowCartNav{
+      display: none;
+    }
+    .removePresentCard{
+      display: none;
+    }
+    form {
+      justify-self: flex-start;
+      width: 300px ;
+      grid-column: 1;
+      grid-row: 3;
+      label{
+        font-size: 16px !important;
+      }
+      span{
+        width: 230px !important;
+      }
+      input,textarea{
+        width: 80% !important;
+      }
+    }
   }
 }

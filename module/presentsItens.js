@@ -19,6 +19,8 @@ const initPresentItens = () => {
     const ordered = orderBy(arr, value);
 
     listItens.innerHTML = "";
+    arrNova = ordered.slice()
+    console.log(arrNova)
     render(ordered);
   };
 
@@ -32,8 +34,8 @@ const initPresentItens = () => {
       listItens.appendChild(li);
     });
   };
- 
   render(arr);
-
 };
 export default initPresentItens;
+
+let arrNova

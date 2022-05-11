@@ -8,7 +8,7 @@ const initImportMessage = () => {
       const li = document.createElement("li");
       const h2 = document.createElement("h2");
       const p = document.createElement("p");
-      feedback.appendChild(li);
+      feedback.appendChild(li); 
       li.appendChild(h2);
       li.appendChild(p);
       h2.innerHTML = e.mConvidado;
