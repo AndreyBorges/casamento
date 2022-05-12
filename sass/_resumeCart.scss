@@ -216,113 +216,167 @@
 
 @media (max-width: 425px) {
   #resume {
-    
+    max-width: 380px !important;
     grid-template-columns: 380px;
     gap: 40px;
-    .prices{
-      grid-row: 1 ;
-      p{
+    .prices {
+      grid-row: 1;
+      p {
         max-width: 320px;
       }
     }
-    p{
+    p {
       font-size: 14px;
       width: 40ch;
       text-align: left;
     }
-    .cartWrapper{
+    .cartWrapper {
       align-items: center;
       justify-content: flex-start;
       width: 300px;
-      li{
+      li {
         align-self: flex-start;
         justify-self: flex-start;
-        &::after{
+        &::after {
           top: 0px !important;
         }
       }
     }
-    .btnFinishedCart{
+    .btnFinishedCart {
       display: flex;
       gap: 20px;
-      button{
+      button {
         padding: 10px !important;
         font-size: 14px !important;
         width: 80%;
       }
     }
     form {
-      justify-self: center;
-      width: 300px ;
+      justify-self: start;
+      width: 300px !important;
       grid-column: 1;
       grid-row: 2;
-      input,textarea{
+      input,
+      textarea {
         width: 80%;
       }
     }
   }
 }
+@media (max-width: 375px) {
+  #resume {
+    p,span{
+      font-size: 16px !important;
+      max-width: 30ch;
+    }
+    h2,label{
+      font-size: 18px !important;
+    }
+
+    .prices {
+      max-width: 240px;
+      span{
+      margin-right: 25px;
+      }
+    }
+    
+    .cartWrapper {
+      width: 300px;
+      padding: 0 0px 0 10px;
+      li {
+        align-self: flex-start;
+        justify-self: flex-start;
+        &::after {
+          top: 0px !important;
+        }
+      }
+    }
+    .btnFinishedCart {
+      display: flex;
+      justify-self: flex-start;
+      gap: 20px;
+      button {
+        padding: 10px !important;
+        font-size: 14px !important;
+        width: 80%;
+      }
+    }
+    form {
+      justify-self: start;
+      width: 300px !important;
+      grid-column: 1;
+      grid-row: 2;
+      input,
+      textarea {
+        width: 80%;
+      }
+    }
+  }
+}
+
 @media (max-width: 320px) {
   #resume {
-    
+    width: 290px !important;
+
     grid-template-columns: 380px;
     gap: 20px;
-    .prices{
-      grid-row: 2 ;
+    .prices {
+      grid-row: 2;
       width: 290px !important;
-      p{
+      p {
         width: 230px !important;
       }
     }
 
-    h2{
+    h2 {
       grid-row: 1;
       grid-column: 1;
       font-size: 16px !important;
     }
-    p{
+    p {
       font-size: 12px !important;
       width: 30ch;
       text-align: left;
       grid-row: 4;
       display: none;
-      span{
-        font-size: 12px !important
+      span {
+        font-size: 12px !important;
       }
     }
-    .cartWrapper{
+    .cartWrapper {
       display: none;
     }
-    .btnFinishedCart{
+    .btnFinishedCart {
       display: flex;
       align-self: flex-start;
       justify-self: flex-start;
-      justify-content:flex-start;
+      justify-content: flex-start;
       gap: 20px;
-      button{
+      button {
         padding: 8px !important;
         font-size: 10px !important;
         width: 80%;
       }
     }
-    .arrowCartNav{
+    .arrowCartNav {
       display: none;
     }
-    .removePresentCard{
+    .removePresentCard {
       display: none;
     }
     form {
       justify-self: flex-start;
-      width: 300px ;
+      width: 300px;
       grid-column: 1;
       grid-row: 3;
-      label{
+      label {
         font-size: 16px !important;
       }
-      span{
+      span {
         width: 230px !important;
       }
-      input,textarea{
+      input,
+      textarea {
         width: 80% !important;
       }
     }

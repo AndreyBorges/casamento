@@ -79,6 +79,25 @@
     }
   }
 }
+@media (max-width: 375px) {
+  .conainerModal1 {
+    max-width: 100vw;
+    .modal {
+      padding: 30px;
+      width: 320px !important;
+      h1{
+        font-size: 28px;
+        margin-top: 30px;
+      }
+      p{
+        font-size: 12px;
+      }
+      button{
+        font-size: 12px !important;
+      }
+    }
+  }
+}
 @media (max-width: 320px) {
   .conainerModal1 {
     flex-direction: row;

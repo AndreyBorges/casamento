@@ -90,7 +90,41 @@
 
 @media (max-width: 425px) {
   .conainerModal2 {
+    max-width: 100vw;
+    max-height: 100vh;
     .modal {
+      .close {
+        top: 5px;
+        right: 5px;
+      }
+      width: 400px !important;
+      height: 600px !important;
+      h1 {
+        font-size: 18px;
+      }
+      .payment {
+        padding: 10px;
+        h3 {
+          font-size: 18px !important;
+        }
+        p {
+          font-size: 14px !important;
+          span {
+            font-size: 12px !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  .conainerModal2 {
+    max-width: 100vw;
+    max-height: 100vh;
+    .modal {
+      max-width: 90%;
+      padding: 50px;
       .close {
         top: 5px;
         right: 5px;
